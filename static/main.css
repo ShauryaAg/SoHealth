@@ -15,7 +15,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bg-steel {
-  background-color: #5f788a;
+  background-color: #fa8542;
 }
 
 .site-header .navbar-nav .nav-link {
@@ -36,6 +36,11 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid #dddddd;
   border-radius: 3px;
   margin-bottom: 20px;
+}
+
+.text-stroke{
+  color: white;
+  -webkit-text-stroke: 0.2px #000000;
 }
 
 .article-title {
@@ -88,6 +93,7 @@ a.article-title:hover {
 .dropdown-btn {
   margin-top: 0.5vh;
   position: relative;
+  padding: 9px;
 }
 
 .dropdown-list{
@@ -108,6 +114,8 @@ a.article-title:hover {
   display: block;
 }
 
-.flex-body{
+.flex-container{
   display: flex;
+  align-items: stretch;
+  justify-content: center;
 }

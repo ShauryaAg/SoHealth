@@ -45,6 +45,32 @@
                     {{ form.EndTime(class="form-control form-control-lg") }}
                 {% endif %}
             </div>
+                <div class="form-group">
+                    {{ form.StartTime.label(class="form-control-label") }}
+                    {% if form.StartTime.errors %}
+                        {{ form.StartTime(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.title.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.StartTime(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.EndTime.label(class="form-control-label") }}
+                    {% if form.EndTime.errors %}
+                        {{ form.EndTime(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.EndTime.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.EndTime(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
             </div>
             <div class="form-group">
                 {{ form.title.label(class="form-control-label") }}
