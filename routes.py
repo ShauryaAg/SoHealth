@@ -3,7 +3,7 @@ import secrets
 from PIL import Image
 from flask import render_template, url_for, flash, redirect, request, abort
 from SoHealth import app, db, bcrypt
-from SoHealth.forms import RegistrationForm, LoginForm, UpdateAccountForm, PostForm
+from SoHealth.forms import RegistrationForm, LoginForm, UpdateAccountForm, PostForm, WeightForm
 from SoHealth.models import User, Post
 from flask_login import login_user, current_user, logout_user, login_required
 
@@ -129,6 +129,11 @@ def new_post():
     return render_template('create_post.html', title='Add Activity',
                            form=form, legend='Add Activity')
 
+@app.route("/weight", methods=['GET', 'POST'])
+@login_required
+def weight():
+    form = WeightForm()
+    return render_template('weight.html', title='Add Weight', form=form)
 
 @app.route("/post/<int:post_id>")
 def post(post_id):

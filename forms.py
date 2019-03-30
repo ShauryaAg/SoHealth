@@ -1,10 +1,10 @@
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileAllowed
 from flask_login import current_user
-from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField, RadioField, SelectField, TimeField
+from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField, RadioField,SelectField,  DecimalField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
 from SoHealth.models import User
-# from wtforms_components import TimeField
+from wtforms_components import TimeField,  DateField
 
 
 
@@ -87,4 +87,9 @@ class PostForm(FlaskForm):
     EndTime =  TimeField('End', validators=[DataRequired()])
     title = StringField('Activity Title', validators=[DataRequired()])
     content = TextAreaField('Notes', validators=[DataRequired()])
+    submit = SubmitField('POST')
+
+class WeightForm(FlaskForm):
+    weight= DecimalField('Enter Weight',validators=[DataRequired()])
+    Date = DateField("Enter Date",validators=[DataRequired()])
     submit = SubmitField('POST')
