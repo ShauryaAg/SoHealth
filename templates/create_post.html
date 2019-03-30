@@ -18,6 +18,7 @@
                     {{ form.activity(class="form-control form-control-lg") }}
                 {% endif %}
             </div>
+            <div class="flex-body">
             <div class="form-group">
                 {{ form.StartTime.label(class="form-control-label") }}
                 {% if form.StartTime.errors %}
@@ -43,6 +44,7 @@
                 {% else %}
                     {{ form.EndTime(class="form-control form-control-lg") }}
                 {% endif %}
+            </div>
             </div>
             <div class="form-group">
                 {{ form.title.label(class="form-control-label") }}
