@@ -4,11 +4,7 @@ from flask_login import current_user
 from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField, RadioField, SelectField, TimeField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
 from SoHealth.models import User
-<<<<<<< HEAD
 from wtforms_components import TimeField
-=======
-
->>>>>>> b2a20a45ca4639da87f38d452d2841954b90318d
 
 
 class RegistrationForm(FlaskForm):
