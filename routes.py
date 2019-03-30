@@ -2,9 +2,9 @@ import os
 import secrets
 from PIL import Image
 from flask import render_template, url_for, flash, redirect, request, abort
-from backend import app, db, bcrypt
-from backend.forms import RegistrationForm, LoginForm, UpdateAccountForm, PostForm
-from backend.models import User, Post
+from SoHealth import app, db, bcrypt
+from SoHealth.forms import RegistrationForm, LoginForm, UpdateAccountForm, PostForm
+from SoHealth.models import User, Post
 from flask_login import login_user, current_user, logout_user, login_required
 
 
