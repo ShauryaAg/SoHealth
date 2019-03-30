@@ -1,10 +1,14 @@
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileAllowed
 from flask_login import current_user
-from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField, RadioField, SelectField
+from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField, RadioField, SelectField, TimeField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
 from SoHealth.models import User
+<<<<<<< HEAD
 from wtforms_components import TimeField
+=======
+
+>>>>>>> b2a20a45ca4639da87f38d452d2841954b90318d
 
 
 class RegistrationForm(FlaskForm):
@@ -84,5 +88,5 @@ class PostForm(FlaskForm):
     StartTime = TimeField('Start', validators=[DataRequired()])
     EndTime =  TimeField('End', validators=[DataRequired()])
     title = StringField('Activity Title', validators=[DataRequired()])
-    content = TextAreaField('Content', validators=[DataRequired()])
+    content = TextAreaField('Notes', validators=[DataRequired()])
     submit = SubmitField('POST')
