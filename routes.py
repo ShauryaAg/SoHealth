@@ -120,13 +120,14 @@ def account():
 def new_post():
     form = PostForm()
     if form.validate_on_submit():
-        post = Post(title=form.title.data, content=form.content.data, author=current_user)
+        post = Post(title=form.title.data, content=form.content.data, author=current_user, activity=form.activity.data,
+                                            StartTime=form.StartTime.data, EndTime=form.EndTime.data, calories=0, kilometers=0)
         db.session.add(post)
         db.session.commit()
         flash('Your post has been created!', 'success')
         return redirect(url_for('home'))
-    return render_template('create_post.html', title='New Post',
-                           form=form, legend='New Post')
+    return render_template('create_post.html', title='Add Activity',
+                           form=form, legend='Add Activity')
 
 
 @app.route("/post/<int:post_id>")

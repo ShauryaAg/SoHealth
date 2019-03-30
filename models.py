@@ -27,7 +27,7 @@ class Post(db.Model):
     date_posted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     StartTime = db.Column(db.Time, nullable=False)
     EndTime = db.Column(db.Time, nullable=False)
-    notes = db.Column(db.Text, nullable=False)
+    content = db.Column(db.Text, nullable=False)
     calories = db.Column(db.Integer, nullable=False)
     kilometers = db.Column(db.Integer, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
