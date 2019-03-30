@@ -8,6 +8,29 @@ from SoHealth.models import User, Post
 from flask_login import login_user, current_user, logout_user, login_required
 
 
+choices=  [
+    {
+        'activity': 'Walking',
+        'calories': 7.6
+    },
+    {
+        'activity': 'Running',
+        'calories': 13.2
+    },
+    {
+        'activity': 'Football',
+        'calories': 12
+    },
+    {
+        'activity': 'Basketball',
+        'calories': 9.33
+    },
+    {   'activity': 'Tennis',
+        'calories': 9.33
+    }]
+for choice in choices:
+    print(choice['activity'])
+
 @app.route("/")
 @app.route("/home")
 def home():
