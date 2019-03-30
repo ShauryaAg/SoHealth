@@ -4,11 +4,9 @@ from flask_login import current_user
 from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField, RadioField, SelectField, TimeField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
 from SoHealth.models import User
-<<<<<<< HEAD
-from wtforms_components import TimeField
-=======
+# from wtforms_components import TimeField
 
->>>>>>> b2a20a45ca4639da87f38d452d2841954b90318d
+
 
 
 class RegistrationForm(FlaskForm):
@@ -84,13 +82,8 @@ choices=  [
 
 class PostForm(FlaskForm):
     activity =  SelectField('Activity', choices =[('value', 'Walking'), ('value_two', 'Running'),
-<<<<<<< HEAD
                                         ('value_three', 'Football'), ('value_four', 'Basketball'), ('value_five', 'Tennis')],)
-    StartTime = TimeField('Start',  validators=[DataRequired()])
-=======
-                                        ('value_three', 'Football'), ('value_four', 'Basketball'), ('value_five', 'Tennis') ])
     StartTime = TimeField('Start', validators=[DataRequired()])
->>>>>>> ebdacba9b362385827ba8ce7ae5e9901fe10a657
     EndTime =  TimeField('End', validators=[DataRequired()])
     title = StringField('Activity Title', validators=[DataRequired()])
     content = TextAreaField('Notes', validators=[DataRequired()])
