@@ -80,7 +80,7 @@ choices=  [
 
 class PostForm(FlaskForm):
     activity =  SelectField('Activity', choices =[('value', 'Walking'), ('value_two', 'Running'),
-                                        ('value_three', 'Football'), ('value_four', 'Basketball'), ('value_five', 'Tennis') ])
+                                        ('value_three', 'Football'), ('value_four', 'Basketball'), ('value_five', 'Tennis')],)
     StartTime = TimeField('Start', validators=[DataRequired()])
     EndTime =  TimeField('End', validators=[DataRequired()])
     title = StringField('Activity Title', validators=[DataRequired()])
