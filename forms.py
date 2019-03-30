@@ -1,9 +1,10 @@
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileAllowed
 from flask_login import current_user
-from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField, RadioField, SelectField, TimeField
+from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField, RadioField, SelectField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
 from SoHealth.models import User
+from wtforms_alchemy import TimeField
 
 
 class RegistrationForm(FlaskForm):
@@ -80,7 +81,7 @@ choices=  [
 class PostForm(FlaskForm):
     activity =  SelectField('Activity', choices =[('value', 'Walking'), ('value_two', 'Running'),
                                         ('value_three', 'Football'), ('value_four', 'Basketball'), ('value_five', 'Tennis') ])
-    StartTime = TimeField('Start', validators=[DataRequired()])     
+    StartTime = TimeField('Start', format='%Y-%m-%d', validators=[DataRequired()])
     EndTime =  TimeField('End', validators=[DataRequired()])
     title = StringField('Activity Title', validators=[DataRequired()])
     content = TextAreaField('Content', validators=[DataRequired()])
