@@ -41,7 +41,7 @@
     border-bottom-style: solid;
     border-radius: 0.5vh;
     border-color: rgb(236, 157, 9);
-}   
+}
 
 .form-feild > label{
     position: relative;
@@ -55,11 +55,11 @@
     height: 4vh;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     cursor: text;
-    transition: 
+    transition:
             font-size .35s ease,
             bottom .35s ease,
             opacity .35s ease,
-            left .35s ease;      
+            left .35s ease;
 }
 
 .form-feild > input:focus + label, .form-feild > input:valid + label{
@@ -76,9 +76,9 @@
     background-color: transparent;
     border: 2px solid;
     border-radius: 3px;
-    
+
 }
 
 .legend{
-    box-sizing: border-box;   
+    box-sizing: border-box;
 }

@@ -1,9 +1,9 @@
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileAllowed
 from flask_login import current_user
-from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField
+from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField, RadioField, SelectField, TimeField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
-from backend.models import User
+from SoHealth.models import User
 
 
 class RegistrationForm(FlaskForm):
@@ -55,7 +55,33 @@ class UpdateAccountForm(FlaskForm):
             if user:
                 raise ValidationError('That email is taken. Please choose a different one.')
 
+
+choices=  [
+    {
+        'activity': 'Walking',
+        'calories': 7.6
+    },
+    {
+        'activity': 'Running',
+        'calories': 13.2
+    },
+    {
+        'activity': 'Football',
+        'calories': 12
+    },
+    {
+        'activity': 'Basketball',
+        'calories': 9.33
+    },
+    {   'activity': 'Tennis',
+        'calories': 9.33
+    }]
+
 class PostForm(FlaskForm):
-    title =  StringField('Title', validators=[DataRequired()])
+    activity =  SelectField('Activity', choices =[('value', 'Walking'), ('value_two', 'Running'),
+                                        ('value_three', 'Football'), ('value_four', 'Basketball'), ('value_five', 'Tennis') ])
+    StartTime = TimeField('Start', validators=[DataRequired()])     
+    EndTime =  TimeField('End', validators=[DataRequired()])
+    title = StringField('Activity Title', validators=[DataRequired()])
     content = TextAreaField('Content', validators=[DataRequired()])
     submit = SubmitField('POST')
