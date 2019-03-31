@@ -19,15 +19,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .site-header .navbar-nav .nav-link {
-  color: #ebf0f3;
-}
-
-.site-header .navbar-nav .nav-link:hover {
-  color: #ffffff;
+  color: #ec4705;
 }
 
 .site-header .navbar-nav .nav-link.active {
   font-weight: 500;
+}
+
+.home-link{
+  color: #dddddd;
 }
 
 .content-section {
@@ -38,8 +38,8 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 20px;
 }
 
-.text-stroke{
-  color: rgb(241, 151, 91);
+.dropdown-text{
+  color: rgb(255, 102, 0);
 }
 
 .article-title {
@@ -117,4 +117,20 @@ a.article-title:hover {
   display: flex;
   align-items: stretch;
   justify-content: center;
+}
+
+.post-data{
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-start;
+}
+
+.post-time{
+  padding: 0% 4%;
+}
+
+
+.badge-icon{
+  color: purple;
+  padding: 0px 30px;
 }

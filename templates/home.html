@@ -5,12 +5,22 @@
       <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}">
       <div class="media-body">
         <div class="article-metadata">
-          <a class="mr-2" href="#">{{ post.author.username }}</a>
+          <a class="mr-2" href="{{ url_for('friend') }}">{{ post.author.username }}</a>
           <small class="text-muted">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
         </div>
+        <div class="post-data">
         <h2><a class="article-title" href="{{ url_for('post', post_id=post.id)}}">{{ post.title }}</a></h2>
+        <p class="post-time">{{ post.time.strftime('%M Mins %S Secs') }}</p>
+        </div>
+        <div class="post-data">
+        {% if post.kilometers %}
+          <p class="pr-2">{{ post.kilometers }} Kilometers</p>
+        {% endif %}
+          <p class="px-2">{{ post.calories }} Calories</p>
+        </div>
         <p class="article-content">{{ post.content }}</p>
       </div>
     </article>
     {% endfor %}
+
 {% endblock content %}

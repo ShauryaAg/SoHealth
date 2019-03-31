@@ -61,9 +61,9 @@ class UpdateAccountForm(FlaskForm):
 
 class PostForm(FlaskForm):
     activity =  SelectField('Activity', choices =[('Walking', 'Walking'), ('Running', 'Running'),
-                                        ('Football', 'Football'), ('Basketball', 'Basketball'), ('Tennis', 'Tennis')],)
-    time = TimeField('Total Time', validators=[DataRequired()])
-    kilometers = FloatField('Kilometers', validators=[DataRequired()])
+                                        ('Football', 'Football'), ('Basketball', 'Basketball'), ('Tennis', 'Tennis')])
+    time = TimeField('Total Time', format='%M:%S', validators=[DataRequired()])
+    kilometers = FloatField('Kilometers')
     content = TextAreaField('Notes', validators=[DataRequired()])
     submit = SubmitField('POST')
 

@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="content-section">
+      <div class="media">
+        <img class="rounded-circle account-img" src="static/profile_pics/FriendImage.jpg">
+        <div class="media-body">
+          <h2 class="account-heading">ShauryaAg</h2>
+          <p class="text-secondary">shauryaag@gmail.com</p>
+        </div>
+        <div class="badges">
+            <div class="badge">
+                <i class="fas fa-basketball-ball fa-3x badge-icon"></i>
+                <p>B-Hustler</p>
+            </div>
+            <div class="badge">
+                <i class="fas fa-skating fa-3x badge-icon"></i> 
+                <p>Sk8-Boi</p>
+            </div>
+            <div class="badge">
+                <i class="fas fa-walking fa-3x badge-icon"></i>
+                <p>Stroller</p>
+            </div>
+        </div>   
+      </div>
+        <hr>
+        <div class="bio-group">
+            <h2 class="bio">Bio</h2>
+            <p>Some interesting Bio!!</p>
+        </div>
+        <hr>
+        <div class="recent-group">
+            <h4 class="pb-2">Recent Actvities</h4>
+            <div class="recent-act post-data py-0">
+                <p>Basketball</p>
+                <small class="px-2">3 days ago</small>    
+            </div>
+            <div class="recent-act post-data py-0">
+                <p>Baseball</p>
+                <small class="px-2">5 days ago</small>    
+            </div>
+            <div class="recent-act post-data py-0">
+                <p>Skating</p>
+                <small class="px-2">7 days ago</small>    
+            </div>
+        </div>  
+    </div>
+{% endblock content %}

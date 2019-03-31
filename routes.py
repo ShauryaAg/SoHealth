@@ -97,8 +97,7 @@ def account():
 def new_post():
     form = PostForm()
     if form.validate_on_submit():
-        post = Post(content=form.content.data, author=current_user, activity="" , title=form.activity.data,
-                                            time=form.time.data, kilometers=form.kilometers.data, calories=0)
+        post = Post(content=form.content.data, author=current_user, activity="" , title=form.activity.data, time=form.time.data, kilometers=form.kilometers.data, calories=(47*int(form.kilometers.data)))
         db.session.add(post)
         db.session.commit()
         flash('Your post has been created!', 'success')
@@ -150,3 +149,8 @@ def delete_post(post_id):
     db.session.commit()
     flash('Your post has been deleted!', 'success')
     return redirect(url_for('home'))
+
+
+@app.route("/friend")
+def friend():
+    return render_template("friend.html", title='Friend')

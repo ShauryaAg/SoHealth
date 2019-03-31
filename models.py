@@ -28,7 +28,7 @@ class Post(db.Model):
     time= db.Column(db.Time, nullable=False)
     content = db.Column(db.Text, nullable=False)
     calories = db.Column(db.Integer, nullable=False)
-    kilometers = db.Column(db.Integer, nullable=False)
+    kilometers = db.Column(db.Integer, nullable=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
 
     def __repr__(self):

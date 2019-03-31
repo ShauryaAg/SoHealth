@@ -31,7 +31,7 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarToggle">
             <div class="navbar-nav mr-auto">
-              <a class="nav-item nav-link" href="/">Home</a>
+              <a class="nav-item nav-link home-link" href="/">Home</a>
             </div>
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
@@ -39,16 +39,16 @@
                 <div class="dropdown-btn">
                   <i class="fa fa-plus fa-lg" aria-hidden="true"></i>
                   <div class="dropdown-list">
-                  <a class="nav-item nav-link text-stroke" href="{{ url_for('new_post')}}">Add Activity</a>
-                  <a class="nav-item nav-link text-stroke" href="{{ url_for('logout')}}">Log Weight</a>
-                  <a class="nav-item nav-link text-stroke" href="{{ url_for('logout')}}">Track Workout</a>
+                  <a class="nav-item nav-link dropdown-text" href="{{ url_for('weight')}}">Log Weight</a>
+                  <a class="nav-item nav-link dropdown-text" href="#">Track Workout</a>
+                  <a class="nav-item nav-link dropdown-text" href="{{ url_for('new_post')}}">Add Activity</a>
                 </div>                 
                 </div>
                 <div class="dropdown-btn">
                  <i class="fa fa-user-circle fa-lg" aria-hidden="true"></i>
                 <div class="dropdown-list">
-                  <a class="nav-item nav-link text-stroke" href="{{ url_for('account')}}">Account</a>
-                  <a class="nav-item nav-link text-stroke" href="{{ url_for('logout')}}">Logout</a>
+                  <a class="nav-item nav-link dropdown-text" href="{{ url_for('account')}}">Account</a>
+                  <a class="nav-item nav-link dropdown-text" href="{{ url_for('logout')}}">Logout</a>
                 </div>
               </div>
               {% else %}
