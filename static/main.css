@@ -19,7 +19,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .site-header .navbar-nav .nav-link {
-  color: #cbd5db;
+  color: #ebf0f3;
 }
 
 .site-header .navbar-nav .nav-link:hover {
@@ -39,8 +39,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .text-stroke{
-  color: white;
-  -webkit-text-stroke: 0.2px #000000;
+  color: rgb(241, 151, 91);
 }
 
 .article-title {
@@ -99,7 +98,7 @@ a.article-title:hover {
 .dropdown-list{
   display: none;
   position: absolute;
-  background-color: #e9c10dcc;
+  background-color: #ffffffff;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   padding: 12px 16px;
