@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileAllowed
 from flask_login import current_user
-from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField, RadioField,SelectField,  DecimalField
+from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField, RadioField,SelectField, FloatField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
 from SoHealth.models import User
 from wtforms_components import TimeField,  DateField
@@ -59,37 +59,15 @@ class UpdateAccountForm(FlaskForm):
                 raise ValidationError('That email is taken. Please choose a different one.')
 
 
-choices=  [
-    {
-        'activity': 'Walking',
-        'calories': 7.6
-    },
-    {
-        'activity': 'Running',
-        'calories': 13.2
-    },
-    {
-        'activity': 'Football',
-        'calories': 12
-    },
-    {
-        'activity': 'Basketball',
-        'calories': 9.33
-    },
-    {   'activity': 'Tennis',
-        'calories': 9.33
-    }]
-
 class PostForm(FlaskForm):
-    activity =  SelectField('Activity', choices =[('value', 'Walking'), ('value_two', 'Running'),
-                                        ('value_three', 'Football'), ('value_four', 'Basketball'), ('value_five', 'Tennis')],)
-    StartTime = TimeField('Start', validators=[DataRequired()])
-    EndTime =  TimeField('End', validators=[DataRequired()])
-    title = StringField('Activity Title', validators=[DataRequired()])
+    activity =  SelectField('Activity', choices =[('Walking', 'Walking'), ('Running', 'Running'),
+                                        ('Football', 'Football'), ('Basketball', 'Basketball'), ('Tennis', 'Tennis')],)
+    time = TimeField('Total Time', validators=[DataRequired()])
+    kilometers = FloatField('Kilometers', validators=[DataRequired()])
     content = TextAreaField('Notes', validators=[DataRequired()])
     submit = SubmitField('POST')
 
 class WeightForm(FlaskForm):
-    weight= DecimalField('Enter Weight',validators=[DataRequired()])
+    weight= FloatField('Enter Weight',validators=[DataRequired()])
     Date = DateField("Enter Date",validators=[DataRequired()])
     submit = SubmitField('POST')
