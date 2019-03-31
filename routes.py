@@ -3,33 +3,10 @@ import secrets
 from PIL import Image
 from flask import render_template, url_for, flash, redirect, request, abort
 from SoHealth import app, db, bcrypt
-from SoHealth.forms import RegistrationForm, LoginForm, UpdateAccountForm, PostForm
+from SoHealth.forms import RegistrationForm, LoginForm, UpdateAccountForm, PostForm, WeightForm
 from SoHealth.models import User, Post
 from flask_login import login_user, current_user, logout_user, login_required
 
-
-choices=  [
-    {
-        'activity': 'Walking',
-        'calories': 7.6
-    },
-    {
-        'activity': 'Running',
-        'calories': 13.2
-    },
-    {
-        'activity': 'Football',
-        'calories': 12
-    },
-    {
-        'activity': 'Basketball',
-        'calories': 9.33
-    },
-    {   'activity': 'Tennis',
-        'calories': 9.33
-    }]
-for choice in choices:
-    print(choice['activity'])
 
 @app.route("/")
 @app.route("/home")
@@ -120,8 +97,8 @@ def account():
 def new_post():
     form = PostForm()
     if form.validate_on_submit():
-        post = Post(title=form.title.data, content=form.content.data, author=current_user, activity=form.activity.data,
-                                            StartTime=form.StartTime.data, EndTime=form.EndTime.data, calories=0, kilometers=0)
+        post = Post(content=form.content.data, author=current_user, activity="" , title=form.activity.data,
+                                            time=form.time.data, kilometers=form.kilometers.data, calories=0)
         db.session.add(post)
         db.session.commit()
         flash('Your post has been created!', 'success')
@@ -129,6 +106,13 @@ def new_post():
     return render_template('create_post.html', title='Add Activity',
                            form=form, legend='Add Activity')
 
+
+
+@app.route("/weight", methods=['GET', 'POST'])
+@login_required
+def weight():
+    form = WeightForm()
+    return render_template('weight.html', title='Add Weight', form=form)
 
 @app.route("/post/<int:post_id>")
 def post(post_id):
